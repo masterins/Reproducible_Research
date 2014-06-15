@@ -64,8 +64,8 @@ names(final_result)<-"par"
 final_result$cat<-factor(c("mean","median"))
 
 # with the ggplot2 utility create a graphic histogram
-g<-ggplot(dsf,aes(x=daily_steps))
-graphic_result<-g+geom_histogram(fill="blue",colour="darkblue",binwidth=3000)+
+gp<-ggplot(dsf,aes(x=daily_steps))
+graphic_result<-gp+geom_histogram(fill="blue",colour="darkblue",binwidth=3000)+
   labs(title = "Daily Steps")+
   scale_linetype_discrete(breaks=c("mean","median")) 
 ```
@@ -76,7 +76,8 @@ print(graphic_result)
 ```
 
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
-#Mean and Median
+# Mean and Median
+
 
 ```r
 cat("mean:",final_mean)
@@ -93,7 +94,7 @@ cat("median:", final_median)
 ```
 ## median: 10395
 ```
-Average 5 minutes of steps
+# Average 5 minutes of steps
 
 ```r
 interval_number_final<-0:(nrow(files)-1)
