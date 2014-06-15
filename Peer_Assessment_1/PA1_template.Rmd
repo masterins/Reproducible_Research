@@ -1,0 +1,29 @@
+## Assigment 1
+
+# load library and file
+
+```{r}
+
+library(ggplot2)
+library(chron)
+library(scales)
+library(reshape2)
+
+# load datas 
+files<-read.csv("activity.csv")
+```
+
+# transform data
+
+```{r}
+files$date <- as.Date(files$date, format = "%Y-%m-%d")
+
+# remove the na data and select the columns and put all in a new variable
+
+daily_steps<-tapply(files$steps,files$date,sum,na.rm=TRUE)
+
+```{r fig.width=7, fig.height=6}
+
+
+```
+
