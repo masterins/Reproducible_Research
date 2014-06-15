@@ -56,8 +56,6 @@ daily_steps<-tapply(files$steps,files$date,sum,na.rm=TRUE)
 
 ```r
 # Get a graphic with the mean, median 
-
-# Get a graphic with the mean, median 
 dsf<-data.frame(daily_steps)
 final_mean<-mean(daily_steps)
 final_median<-median(daily_steps)
@@ -73,15 +71,6 @@ g+geom_histogram(fill="blue",colour="darkblue",binwidth=3000)+
 ```
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
-
-```r
-# print the graph
-print(graphic_result)
-```
-
-```
-## Error: No layers in plot
-```
 
 
 

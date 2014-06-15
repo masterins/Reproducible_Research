@@ -27,7 +27,6 @@ daily_steps<-tapply(files$steps,files$date,sum,na.rm=TRUE)
 
 ```{r fig.width=7, fig.height=6}
 
-# Get a graphic with the mean, median 
 
 # Get a graphic with the mean, median 
 dsf<-data.frame(daily_steps)
@@ -43,8 +42,6 @@ g+geom_histogram(fill="blue",colour="darkblue",binwidth=3000)+
   labs(title = "Daily Steps")+
   scale_linetype_discrete(breaks=c("mean","median")) 
 
-# print the graph
-print(graphic_result)
 ```
 
 
