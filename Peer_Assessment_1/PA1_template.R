@@ -29,4 +29,7 @@ g+geom_histogram(fill="blue",colour="darkblue",binwidth=3000)+
 #save the new graphic and call this new graph is pd1steps
 ggsave(filename="daily_steps.png",width=5,height=4)
 
+print(final_mean)
+print(final_median)
+
 

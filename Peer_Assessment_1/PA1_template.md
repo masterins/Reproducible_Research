@@ -76,5 +76,21 @@ print(graphic_result)
 ```
 
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+#Mean and Median
 
+```r
+cat("mean:",final_mean)
+```
+
+```
+## mean: 9354
+```
+
+```r
+cat("median:", final_median)
+```
+
+```
+## median: 10395
+```
 
