@@ -49,13 +49,12 @@ files$date <- as.Date(files$date, format = "%Y-%m-%d")
 # remove the na data and select the columns and put all in a new variable
 
 daily_steps<-tapply(files$steps,files$date,sum,na.rm=TRUE)
-
-#  The graph  steps per day
 ```
 
-```r
-daily_steps<-tapply(files$steps,files$date,sum,na.rm=TRUE)
+#  The graph  steps per day
 
+
+```r
 # Get a graphic with the mean, median 
 
 # Get a graphic with the mean, median 

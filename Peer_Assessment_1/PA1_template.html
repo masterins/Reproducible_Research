@@ -218,13 +218,11 @@ files&lt;-read.csv(&quot;activity.csv&quot;)
 # remove the na data and select the columns and put all in a new variable
 
 daily_steps&lt;-tapply(files$steps,files$date,sum,na.rm=TRUE)
-
-#  The graph  steps per day
 </code></pre>
 
-<pre><code class="r">daily_steps&lt;-tapply(files$steps,files$date,sum,na.rm=TRUE)
+<h1>The graph  steps per day</h1>
 
-# Get a graphic with the mean, median 
+<pre><code class="r"># Get a graphic with the mean, median 
 
 # Get a graphic with the mean, median 
 dsf&lt;-data.frame(daily_steps)
