@@ -32,4 +32,21 @@ ggsave(filename="daily_steps.png",width=5,height=4)
 print(final_mean)
 print(final_median)
 
+# average 5 minutes of steps
+
+interval_number_final<-0:(nrow(files)-1)
+interval_final<-factor(interval_number_final%%288)
+int_mean<-tapply(files$steps,interval_final,mean,na.rm=TRUE)
+dimnames(int_mean)[[1]]<-NULL  ##to avoid confusions
+int_mean_final<-as.data.frame(int_mean)
+point0<-as.character(files$date[1])
+point1<-as.POSIXlt(point0)
+lines<-dim(int_mean_final)[1]
+int_mean_final$times<-as.POSIXct(seq.POSIXt(from=point1,by="5 min",length.out=lines))
+graph<-ggplot(int_mean_final,aes(x=times,y=int_mean))
+graph_final<-graph+labs(title = "Average steps on 5 minute of intervals")+
+geom_point(size=1)+
+geom_line(size=.5,col="black")+
+labs(x="time",y="number of steps")+
+ggsave(filename="average_steps_5_minutes.png",width=5,height=4)
 
