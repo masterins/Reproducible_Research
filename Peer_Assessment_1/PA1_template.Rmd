@@ -25,7 +25,7 @@ daily_steps<-tapply(files$steps,files$date,sum,na.rm=TRUE)
 
 #  The graph  steps per day
 
-```{r fig.width=7, fig.height=6}
+```{r}
 
 
 # Get a graphic with the mean, median 
@@ -37,12 +37,16 @@ names(final_result)<-"par"
 final_result$cat<-factor(c("mean","median"))
 
 # with the ggplot2 utility create a graphic histogram
-graphic_result<-g<-ggplot(dsf,aes(x=daily_steps))
-g+geom_histogram(fill="blue",colour="darkblue",binwidth=3000)+
+g<-ggplot(dsf,aes(x=daily_steps))
+graphic_result<-g+geom_histogram(fill="blue",colour="darkblue",binwidth=3000)+
   labs(title = "Daily Steps")+
   scale_linetype_discrete(breaks=c("mean","median")) 
 
 ```
 
+```{r fig.width=7, fig.height=6}
+print(graphic_result)
+
+```
 
 
