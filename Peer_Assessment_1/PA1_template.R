@@ -57,6 +57,28 @@ print(table(is.na(files)))
 print(table(is.na(files$steps)))
 print(mean(is.na(files$steps)))
 
+#change de files a new files2
+
+files2<-files
+nona<-which(is.na(files2$steps))
+nona2<- nona%%288
+files2$steps[nona]<-int_mean_final$int_mean[nona2]
+
+# Get a graphic2 with the mean, median 
+daily_steps<-tapply(files2$steps,files2$date,sum)
+dsf<-data.frame(daily_steps)
+final_mean<-mean(daily_steps)
+final_median<-median(daily_steps)
+final_result<-as.data.frame(c(final_mean,final_median))
+names(final_result)<-"par"
+final_result$cat<-factor(c("mean","median"))
+# with the ggplot2 utility create a graphic histogram
+g<-ggplot(dsf,aes(x=daily_steps))
+g+geom_histogram(fill="blue",colour="darkblue",binwidth=3000)+
+  labs(title = "Daily Steps")+
+  scale_linetype_discrete(breaks=c("mean","median")) 
+#save the new graphic and call this new graph is pd1steps
+ggsave(filename="daily_steps_missing_values.png",width=5,height=4)
 
 
 

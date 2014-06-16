@@ -155,3 +155,59 @@ cat("mean:",mean(is.na(files$steps)))
 ```
 ## mean: 0.1311
 ```
+
+#  eliminate the null values in the graph
+
+```r
+files2<-files
+nona<-which(is.na(files2$steps))
+nona2<- nona%%288
+files2$steps[nona]<-int_mean_final$int_mean[nona2]
+```
+
+```
+## Warning: número de items para para sustituir no es un múltiplo de la
+## longitud del reemplazo
+```
+
+```r
+daily_steps<-tapply(files2$steps,files2$date,sum)
+dsf<-data.frame(daily_steps)
+final_mean<-mean(daily_steps)
+final_median<-median(daily_steps)
+final_result<-as.data.frame(c(final_mean,final_median))
+names(final_result)<-"par"
+final_result$cat<-factor(c("mean","median"))
+
+# with the ggplot2 utility create a graphic histogram
+gp<-ggplot(dsf,aes(x=daily_steps))
+graphic_result_2<-gp+geom_histogram(fill="blue",colour="darkblue",binwidth=3000)+
+labs(title = "Daily Steps")+
+scale_linetype_discrete(breaks=c("mean","median")) 
+```
+
+
+```r
+print(graphic_result_2)
+```
+
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11.png) 
+# Mean and Median with the eliminate the missing values
+
+
+```r
+cat("mean:",final_mean)
+```
+
+```
+## mean: 10766
+```
+
+```r
+cat("median:", final_median)
+```
+
+```
+## median: 10765
+```
+
