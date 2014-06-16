@@ -33,7 +33,6 @@ print(final_mean)
 print(final_median)
 
 # average 5 minutes of steps
-
 interval_number_final<-0:(nrow(files)-1)
 interval_final<-factor(interval_number_final%%288)
 int_mean<-tapply(files$steps,interval_final,mean,na.rm=TRUE)
@@ -49,4 +48,12 @@ geom_point(size=1)+
 geom_line(size=.5,col="black")+
 labs(x="time",y="number of steps")+
 ggsave(filename="average_steps_5_minutes.png",width=5,height=4)
+
+print(max(int_mean_final$int_mean))
+
+
+
+
+
+
 

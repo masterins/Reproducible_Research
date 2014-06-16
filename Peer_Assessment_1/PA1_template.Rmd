@@ -75,3 +75,7 @@ labs(x="time",y="number of steps")
 print(graph_final)
 
 ```
+# maximun values
+```{r}
+max(int_mean_final$int_mean)
+```

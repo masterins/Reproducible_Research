@@ -119,3 +119,12 @@ print(graph_final)
 ```
 
 ![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7.png) 
+# maximun values
+
+```r
+max(int_mean_final$int_mean)
+```
+
+```
+## [1] 206.2
+```
