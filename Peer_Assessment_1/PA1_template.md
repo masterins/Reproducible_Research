@@ -128,3 +128,30 @@ max(int_mean_final$int_mean)
 ```
 ## [1] 206.2
 ```
+
+# no null effects or missing values
+## Exploratory analysis
+
+```r
+cat("values missing in files",table(is.na(files)))
+```
+
+```
+## values missing in files 50400 2304
+```
+
+```r
+cat("values misssing in steps",table(is.na(files$steps)))
+```
+
+```
+## values misssing in steps 15264 2304
+```
+
+```r
+cat("mean:",mean(is.na(files$steps)))
+```
+
+```
+## mean: 0.1311
+```

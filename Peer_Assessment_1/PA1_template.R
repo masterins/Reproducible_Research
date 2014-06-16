@@ -51,8 +51,11 @@ ggsave(filename="average_steps_5_minutes.png",width=5,height=4)
 
 print(max(int_mean_final$int_mean))
 
-
-
+# no null effects or missing values
+#exploratory analysis
+print(table(is.na(files)))
+print(table(is.na(files$steps)))
+print(mean(is.na(files$steps)))
 
 
 

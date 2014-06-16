@@ -79,3 +79,11 @@ print(graph_final)
 ```{r}
 max(int_mean_final$int_mean)
 ```
+
+# no null effects or missing values
+## Exploratory analysis
+```{r}
+cat("values missing in files",table(is.na(files)))
+cat("values misssing in steps",table(is.na(files$steps)))
+cat("mean:",mean(is.na(files$steps)))
+```

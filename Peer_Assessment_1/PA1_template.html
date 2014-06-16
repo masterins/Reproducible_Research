@@ -287,6 +287,28 @@ labs(x=&quot;time&quot;,y=&quot;number of steps&quot;)
 <pre><code>## [1] 206.2
 </code></pre>
 
+<h1>no null effects or missing values</h1>
+
+<h2>Exploratory analysis</h2>
+
+<pre><code class="r">cat(&quot;values missing in files&quot;,table(is.na(files)))
+</code></pre>
+
+<pre><code>## values missing in files 50400 2304
+</code></pre>
+
+<pre><code class="r">cat(&quot;values misssing in steps&quot;,table(is.na(files$steps)))
+</code></pre>
+
+<pre><code>## values misssing in steps 15264 2304
+</code></pre>
+
+<pre><code class="r">cat(&quot;mean:&quot;,mean(is.na(files$steps)))
+</code></pre>
+
+<pre><code>## mean: 0.1311
+</code></pre>
+
 </body>
 
 </html>
